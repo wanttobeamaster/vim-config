@@ -3,7 +3,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'vasconcelloslf/vim-interestingwords'
 Plug 'majutsushi/tagbar'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'prabirshrestha/vim-lsp' " vim-lsp
 call plug#end()
+
 
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -33,9 +36,26 @@ let g:tagbar_width = 30                                     "设置tagbar的宽�
 let g:tagbar_autofocus = 1                                "这是tagbar一打开，光标即在tagbar页面内，默认在vim打开的文件内
 let g:tagbar_sort = 0                                         "设置标签不排序，默认排序
 
+"lsp-cxx
+let g:lsp_cxx_hl_use_text_props = 1
+
+"easy
+"let g:easycomplete_tab_trigger="<c-space>"
+"let g:easycomplete_scheme="sharp"
+
+set backspace=2
+set vb t_vb=
 set number
 set ts=4
 set cursorline
+hi CursorLine ctermbg = gray
 set ruler
 set shiftwidth=4
 set softtabstop=4
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+map spl :set splitright<CR>:vsplit<CR>
+map sph :set nosplitright<CR>:vsplit<CR>
+map spj :set splitbelow<CR>:split<CR>
+map spk :set nosplitbelow<CR>:split<CR>
