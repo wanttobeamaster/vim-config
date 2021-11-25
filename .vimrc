@@ -3,8 +3,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'vasconcelloslf/vim-interestingwords'
 Plug 'majutsushi/tagbar'
-Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'prabirshrestha/vim-lsp' " vim-lsp
+
+"LSP
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
 
 
@@ -39,6 +43,7 @@ let g:tagbar_sort = 0                                         "设置标签不�
 "lsp-cxx
 let g:lsp_cxx_hl_use_text_props = 1
 
+
 "easy
 "let g:easycomplete_tab_trigger="<c-space>"
 "let g:easycomplete_scheme="sharp"
@@ -52,6 +57,8 @@ hi CursorLine ctermbg = gray
 set ruler
 set shiftwidth=4
 set softtabstop=4
+set modifiable
+
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
