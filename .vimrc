@@ -39,6 +39,9 @@ let g:tagbar_left = 0                                          "让tagbar在页�
 let g:tagbar_width = 30                                     "设置tagbar的宽度为30列，默认40
 let g:tagbar_autofocus = 1                                "这是tagbar一打开，光标即在tagbar页面内，默认在vim打开的文件内
 let g:tagbar_sort = 0                                         "设置标签不排序，默认排序
+set tags=tags
+set autochdir
+
 
 "lsp-cxx
 let g:lsp_cxx_hl_use_text_props = 1
@@ -47,6 +50,17 @@ let g:lsp_cxx_hl_use_text_props = 1
 "easy
 "let g:easycomplete_tab_trigger="<c-space>"
 "let g:easycomplete_scheme="sharp"
+
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+set ttimeout
+set ttimeoutlen=1
+set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set ttyfast
 
 set backspace=2
 set vb t_vb=
@@ -59,10 +73,13 @@ set shiftwidth=4
 set softtabstop=4
 set modifiable
 
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 map spl :set splitright<CR>:vsplit<CR>
 map sph :set nosplitright<CR>:vsplit<CR>
 map spj :set splitbelow<CR>:split<CR>
 map spk :set nosplitbelow<CR>:split<CR>
+
+" 修改匹配括号的颜色
+MatchParen ctermbg=blue guibg=white
+" 光标下单词高亮设定
+hi CursorColumn term=reverse ctermbg=brown guibg=white
+
