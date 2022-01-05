@@ -13,6 +13,9 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'laixintao/asyncomplete-gitcommit'
+
+"go"
+Plug 'fatih/vim-go'
 call plug#end()
 
 filetype plugin on
@@ -47,7 +50,7 @@ au User asyncomplete_setup call asyncomplete#register_source({
     \ })
 
 
-" tagbar"
+" tagbar
 nmap <F8> :TagbarToggle<CR>
 
 let g:tagbar_ctags_bin = 'ctags'                       "tagbar以来ctags插件
